@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "LeetCode: comprobar sintaxis",
+            "type": "process",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-std=c++20", "-Wall", "-Wextra", "-Wpedantic",
+                "-fsyntax-only", "${file}"
+            ],
+            "options": { "cwd": "${fileDirname}" },
+            "problemMatcher": ["$gcc"],
+            "group": { "kind": "build", "isDefault": true },
+            "detail": "Comprueba el .cpp abierto sin generar un ejecutable."
+        }
+    ]
+}
