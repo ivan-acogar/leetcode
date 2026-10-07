@@ -31,12 +31,12 @@ Expected time: O(n). Additional space: O(n).
 #include <unordered_map>
 #include <vector>
 
-class Solution { // O(1) on average
+class Solution {
   public:
     std::vector<int> twoSum(std::vector<int> &nums, int target) {
         int s = nums.size();
 
-        // The map stores
+        // The map stores each number already seen with its index (value -> index),
         // so looking up a complement takes O(1) on average.
         std::unordered_map<int, int> seen;
 

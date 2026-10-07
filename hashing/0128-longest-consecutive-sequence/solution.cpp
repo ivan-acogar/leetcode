@@ -21,6 +21,8 @@ Example 3:
 Input: nums = [1,0,1,2]
 Output: 3
 
+Approach: store every value in a hash set and start counting only from values
+with no predecessor, so each chain is walked once from its first element.
 Expected time: O(n). Additional space: O(n).
 */
 
@@ -32,8 +34,8 @@ public:
     int longestConsecutive(std::vector<int>& nums) {
 
         // each value of the given array will be inserted inside a hash set.
-        // for each value inside the set, we will verify if there is an consecutive value too.
-        // if there is a consecutive value AND and there is NOT a predecessor value, that means we are the start of a chain.
+        // for each value inside the set, we will verify if there is a consecutive value too.
+        // if there is a consecutive value AND there is NOT a predecessor value, that means we are the start of a chain.
         // we will follow the chain keeping the length value inside a variable.
         // finally, we will keep the largest length and return it when no other chain is found.
 

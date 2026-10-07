@@ -19,6 +19,11 @@ Output: [[""]]
 Example 3:
 Input: strs = ["a"]
 Output: [["a"]]
+
+Approach: use the sorted letters of each word as the key of a hash map that
+groups the original words, then collect the groups.
+Time: O(n * k log k), where n is the number of words and k is the longest word.
+Additional space: O(n * k) for the map.
 */
 
 #include <algorithm>

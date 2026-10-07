@@ -1,2 +1,6 @@
 *.exe
 *.o
+
+# Personal study notes (kept locally, not published)
+AGENTS.md
+BITACORA.md

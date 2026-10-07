@@ -1,50 +1,46 @@
-# LeetCode · Código y bitácora
+# LeetCode Solutions in C++
 
-## Organización
+My solutions to algorithm and data structure problems, written in **C++20** while I practice problem solving for technical interviews.
+
+Each solution is organized by technique and starts with the problem statement, the approach I used, and its time and space complexity.
+
+## Solutions
+
+| # | Problem | Difficulty | Technique | Time | Space | Solution |
+|---:|---|---|---|---|---|---|
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Hashing | O(n) | O(n) | [C++](hashing/0001-two-sum/solution.cpp) |
+| 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | Sliding window | O(n) | O(min(n, k)) | [C++](sliding-window/0003-longest-substring-without-repeating-characters/solution.cpp) |
+| 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | Hashing, sorting | O(n · k log k) | O(n · k) | [C++](hashing/0049-group-anagrams/solution.cpp) |
+| 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Easy | Two pointers | O(m + n) | O(1) | [C++](two-pointers/0088-merge-sorted-array/solution.cpp) |
+| 128 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Medium | Hashing | O(n) | O(n) | [C++](hashing/0128-longest-consecutive-sequence/solution.cpp) |
+| 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Easy | Hashing | O(n) | O(n) | [C++](hashing/0217-contains-duplicate/solution.cpp) |
+| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | Hashing (frequency count) | O(n) | O(1) | [C++](hashing/0242-valid-anagram/solution.cpp) |
+| 1431 | [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/) | Easy | Arrays | O(n²) | O(1) extra | [C++](arrays-and-strings/1431-kids-with-the-greatest-number-of-candies/solution.cpp) |
+| 1768 | [Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/) | Easy | Strings | O(m + n) | O(m + n) | [C++](arrays-and-strings/1768-merge-strings-alternately/solution.cpp) |
+| 1929 | [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/) | Easy | Arrays | O(n) | O(n) | [C++](arrays-and-strings/1929-concatenation-of-array/solution.cpp) |
+
+*n* and *m* are input sizes, *k* is the alphabet size (problem 3) or the longest word length (problem 49).
+
+## Structure
 
 ```text
-leetcode/
-├── AGENTS.md                Instrucciones y preferencias de código
-├── BITACORA.md              Progreso y pendientes
-├── LeetCode.code-workspace  Espacio de VS Code
-├── .vscode/                Configuración del editor
-└── <tema>/
-    └── <número>-<nombre>/
-        └── solution.cpp    Descripción, ejemplos, conceptos y solución
+<technique>/<problem-id>-<problem-name>/solution.cpp
 ```
 
-Cada ejercicio contiene un único archivo `.cpp`, con la descripción y ejemplos de LeetCode en comentarios al principio. Todos los comentarios están en inglés y explican los conceptos importantes del programa.
+Every `solution.cpp` contains:
 
-Se conservan los comentarios y los bucles `for` proporcionados por el usuario, incluidos los que usan `auto` o recorren directamente un contenedor. La legibilidad tiene prioridad sobre las microoptimizaciones; las sugerencias se dan en la conversación.
+1. The problem description and the LeetCode examples, as comments.
+2. The approach and its time and space complexity.
+3. A `Solution` class ready to submit on LeetCode (no `main`).
 
-## Ejercicios
+Techniques covered so far: hashing, sliding window, two pointers, and arrays and strings. Next: binary search, linked lists, stacks and queues, and trees and graphs.
 
-| Ejercicio | Tema | Archivo |
-| --- | --- | --- |
-| 1 · Two Sum | Hashing | [Solución y comentarios](hashing/0001-two-sum/solution.cpp) |
-| 3 · Longest Substring Without Repeating Characters | Sliding window | [Solución y comentarios](sliding-window/0003-longest-substring-without-repeating-characters/solution.cpp) |
-| 49 · Group Anagrams | Hashing | [Solución y comentarios](hashing/0049-group-anagrams/solution.cpp) |
-| 88 · Merge Sorted Array | Two pointers | [Solución y comentarios](two-pointers/0088-merge-sorted-array/solution.cpp) |
-| 128 · Longest Consecutive Sequence | Hashing | [Solución y comentarios](hashing/0128-longest-consecutive-sequence/solution.cpp) |
-| 217 · Contains Duplicate | Hashing | [Solución y comentarios](hashing/0217-contains-duplicate/solution.cpp) |
-| 242 · Valid Anagram | Hashing | [Solución y comentarios](hashing/0242-valid-anagram/solution.cpp) |
-| 1431 · Kids With the Greatest Number of Candies | Arrays and strings | [Solución y comentarios](arrays-and-strings/1431-kids-with-the-greatest-number-of-candies/solution.cpp) |
-| 1768 · Merge Strings Alternately | Arrays and strings | [Solución y comentarios](arrays-and-strings/1768-merge-strings-alternately/solution.cpp) |
-| 1929 · Concatenation of Array | Arrays and strings | [Solución y comentarios](arrays-and-strings/1929-concatenation-of-array/solution.cpp) |
+## Checking a solution locally
 
-Los ejercicios se clasifican según el enfoque guardado. El 88 fusiona desde el final con dos índices de lectura y pertenece a `two-pointers`. El 1768 recorre ambas cadenas con un índice común y está en `arrays-and-strings`. El 3 mantiene una ventana y pertenece a `sliding-window`. El progreso y los pendientes se registran en [BITACORA.md](BITACORA.md).
+The solutions are checked with GCC in C++20 mode with warnings enabled:
 
-## Trabajar en VS Code
+```bash
+g++ -std=c++20 -Wall -Wextra -Wpedantic -fsyntax-only path/to/solution.cpp
+```
 
-1. Abre `LeetCode.code-workspace`.
-2. Abre el `solution.cpp` del ejercicio.
-3. Usa **Ctrl+Shift+B** para comprobar la sintaxis con C++20, sin generar un ejecutable.
-4. Copia el código en LeetCode para ejecutarlo o enviarlo.
-
-La tarea utiliza `C:/msys64/ucrt64/bin/g++.exe`. Las soluciones contienen la clase `Solution` sin `main`, por lo que no son programas independientes para ejecutar con F5.
-
-## Estudio y registro
-
-Las conclusiones de estudio que compartas se incorporan a los comentarios del ejercicio y, cuando corresponda, a la bitácora. No se supone una sincronización automática con otros chats o copias subidas.
-
-La prueba anterior del 217 en `../practice/leetcode1/leetcode1.cpp` permanece fuera de este proyecto. La carpeta principal del ejercicio es `hashing/0217-contains-duplicate`.
+In VS Code, open `LeetCode.code-workspace` and press **Ctrl+Shift+B** to run the same check on the open file.
