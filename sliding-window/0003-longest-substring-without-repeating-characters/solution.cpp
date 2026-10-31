@@ -20,11 +20,6 @@ Output: 1
 Example 3:
 Input: s = "pwwkew"
 Output: 3
-
-Approach: keep a sliding window with unique characters in a set.
-Expected time: O(n); each character enters and leaves the window at most once.
-Additional space: O(min(n, k)), where k is the number of possible characters.
-Passing s by value can also require O(n) space for its copy.
 */
 
 #include <string>
@@ -32,29 +27,33 @@ Passing s by value can also require O(n) space for its copy.
 
 class Solution {
 public:
-    int lengthOfLongestSubstring(std::string s) {
-        std::unordered_set<char> window;
-        int longestLength = 0;
-        int left = 0;
-        int length = static_cast<int>(s.size());
+    int lengthOfLongestSubstring(std::string s) { // Complexity: O(n).
+        /* Sliding window using hash set: the window moves forward
+        inside the string, but if an already seen character shows up,
+        then the window shrinks from the left until there is no repeated
+        character inside the window. */
 
-        for (int right = 0; right < length; right++) {
-            // Shrink from the left until the incoming character is no longer present.
-            // A while loop is needed because removing just one character may not be enough.
-            while (window.count(s[right]) != 0) {
+        std::unordered_set<char> window;
+        int longest{};
+        int left{};
+
+        for(int i = 0; i < s.size(); i++){
+
+            /* If the incoming character is repeated,
+            remove characters from the left until the
+            duplicate is gone. */
+            while(window.count(s[i])){
                 window.erase(s[left]);
                 left++;
             }
 
-            window.insert(s[right]);
+            window.insert(s[i]);
 
-            // Both endpoints belong to the window, so its length includes the extra 1.
-            int currentLength = right - left + 1;
-            if (currentLength > longestLength) {
-                longestLength = currentLength;
+            if(window.size() > longest){
+                longest = window.size();
             }
         }
 
-        return longestLength;
+        return longest;
     }
 };
