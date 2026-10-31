@@ -15,6 +15,7 @@ Each solution is organized by technique and starts with the problem statement, t
 | 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | Hashing, sorting | O(n · k log k) | O(n · k) | [C++](hashing/0049-group-anagrams/solution.cpp) |
 | 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Easy | Two pointers | O(m + n) | O(1) | [C++](two-pointers/0088-merge-sorted-array/solution.cpp) |
 | 128 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Medium | Hashing | O(n) | O(n) | [C++](hashing/0128-longest-consecutive-sequence/solution.cpp) |
+| 151 | [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | Medium | Strings (right-to-left scan with two indices) | O(n) | O(n) | [C++](arrays-and-strings/0151-reverse-words-in-a-string/solution.cpp) |
 | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Easy | Hashing | O(n) | O(n) | [C++](hashing/0217-contains-duplicate/solution.cpp) |
 | 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | Arrays (prefix and suffix products) | O(n) | O(n) | [C++](arrays-and-strings/0238-product-of-array-except-self/solution.cpp) |
 | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | Hashing (frequency count) | O(n) | O(1) | [C++](hashing/0242-valid-anagram/solution.cpp) |
