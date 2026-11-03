@@ -20,6 +20,7 @@ Each solution is organized by technique and starts with the problem statement, t
 | 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | Arrays (prefix and suffix products) | O(n) | O(n) | [C++](arrays-and-strings/0238-product-of-array-except-self/solution.cpp) |
 | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | Hashing (frequency count) | O(n) | O(1) | [C++](hashing/0242-valid-anagram/solution.cpp) |
 | 334 | [Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | Arrays (greedy, two tracked minimums) | O(n) | O(1) | [C++](arrays-and-strings/0334-increasing-triplet-subsequence/solution.cpp) |
+| 443 | [String Compression](https://leetcode.com/problems/string-compression/) | Medium | Two pointers (read and write, in place) | O(n) | O(1) | [C++](two-pointers/0443-string-compression/solution.cpp) |
 | 605 | [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/) | Easy | Arrays (greedy, sliding window of 3) | O(n) | O(1) | [C++](arrays-and-strings/0605-can-place-flowers/solution.cpp) |
 | 643 | [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) | Easy | Sliding window (fixed size) | O(n) | O(1) | [C++](sliding-window/0643-maximum-average-subarray-i/solution.cpp) |
 | 704 | [Binary Search](https://leetcode.com/problems/binary-search/) | Easy | Binary search | O(log n) | O(1) | [C++](binary-search/0704-binary-search/solution.cpp) |
